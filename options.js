@@ -1,20 +1,27 @@
 const options = [
 
-    "celsius-kelvin"
+  { "no" : "1",
+    "case":"celsius-kelvin"
+  }
 ,
+{   "no" : "2",
+    "case": "celsius-fahrenheit "
+},
 
-    "celsius-fahrenheit "
-,
+{   "no" : "3",
+    "case":  "kelvin-fahrenheit "
+},
 
-    "kelvin-fahrenheit "
-,
+{   "no" : "4",
+    "case": "kelvin-celsius"
+},
 
-    "kelvin-celsius"
-,
+{   "no" : "5",
+    "case": "fahrenheit-celsius"
+},
 
-    "fahrenheit-celsius"
-,
-
-    "fahrenheit -kelvin"
+{   "no" : "6",
+    "case":  "fahrenheit -kelvin"
+}
 
 ]
