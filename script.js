@@ -43,12 +43,16 @@ function finalResultImplement(){
     const selectedFunction = mapFunction.get(caseSelected.value);
     const inputValue = parseFloat(inputData.value);
     const result = selectedFunction(inputValue);
-    finalResult.value = result;
+    if (!isNaN(result)){
+      finalResult.value = result;
+    }else{
+        finalResult.value = 0;
+    }
 }
 
 function main(){
     insertOptions();
     btnClear.addEventListener("click" , clearInput);
-    inputData.addEventListener("input",finalResultImplemet);
+    inputData.addEventListener("input",finalResultImplement);
 }
 main();
