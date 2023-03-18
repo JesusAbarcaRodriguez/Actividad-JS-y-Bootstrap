@@ -6,8 +6,8 @@ const btnClear = document.querySelector('.clear');
 const mymap = new Map();
 
 mymap.set("1",celsiusToKelvin());
-mymap.set("2",celsiusToKelvin());
-mymap.set("3",celsiusToKelvin());
+mymap.set("2",celsiusToFahrenheit());
+mymap.set("3",fahrenheitToKelvin());
 mymap.set("4",celsiusToKelvin());
 mymap.set("5",celsiusToKelvin());
 mymap.set("6",celsiusToKelvin());
@@ -30,12 +30,20 @@ function clearInput(){
 }
 
 
-
+// Celsius a kelvin 
 function celsiusToKelvin(){
-    console.log( typeof(parseFloat(inputData.value) ));
-    console.log( parseFloat(inputData.value) + 273.15);
     return parseFloat(inputData.value) + 273.15;
 }
+
+// Celsius a Fahrenheit
+function celsiusToFahrenheit() {
+    return ( parseFloat(inputData.value) * 9/5) + 32;
+  }
+
+  // Fahrenheit a Kelvin
+  function fahrenheitToKelvin() {
+    return ( parseFloat(inputData.value) + 459.67) * 5/9;
+  }
 
 
 function main(){
