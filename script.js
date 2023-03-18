@@ -36,7 +36,9 @@ function celsiusToKelvin(){
     console.log( parseFloat(inputData.value) + 273.15);
     return parseFloat(inputData.value) + 273.15;
 }
-
+function kelvinToCelsius(){ return parseFloat(inputData.value) - 273.15; }
+function fahrenheitToCelsius(){ return (5*(parseFloat(inputData.value) - 32) / 9); }
+function fahrenheitToKelvin(){ return ((5*(parseFloat(inputData.value) - 32) / 9)) + 273.15; }
 
 function main(){
     insertOptions();
