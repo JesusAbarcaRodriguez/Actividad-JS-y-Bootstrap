@@ -12,7 +12,6 @@ mymap.set("4",kelvinToCelsius());
 mymap.set("5",fahrenheitToCelsius());
 mymap.set("6",fahrenheitToKelvin());
 
-
 function insertOptions(){
     options.forEach((op) => {
         const option = document.createElement("option");
@@ -22,15 +21,13 @@ function insertOptions(){
     })
 }
 
-
 function clearInput(){
     inputData.value = "";
     console.log("fin");
     finalResult.value = "";
 }
 
-
-// Celsius a kelvin 
+// Celsius a kelvin
 function celsiusToKelvin(){
     return parseFloat(inputData.value) + 273.15;
 }
