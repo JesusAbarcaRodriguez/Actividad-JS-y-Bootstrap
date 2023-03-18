@@ -1,23 +1,23 @@
-const caseSelect = document.querySelector("#select-case");
+const caseSelected = document.querySelector("#select-case");
 const inputData = document.querySelector('#data');
 const finalResult = document.querySelector("#final");
 const btnClear = document.querySelector('.clear');
 
-const mymap = new Map();
+const mapFunction = new Map();
 
-mymap.set("1",celsiusToKelvin);
-mymap.set("2",celsiusToFahrenheit);
-mymap.set("3",kelvinToFahrenheit);
-mymap.set("4",kelvinToCelsius);
-mymap.set("5",fahrenheitToCelsius);
-mymap.set("6",fahrenheitToKelvin);
+mapFunction.set("1",celsiusToKelvin);
+mapFunction.set("2",celsiusToFahrenheit);
+mapFunction.set("3",kelvinToFahrenheit);
+mapFunction.set("4",kelvinToCelsius);
+mapFunction.set("5",fahrenheitToCelsius);
+mapFunction.set("6",fahrenheitToKelvin);
 
 function insertOptions(){
     options.forEach((op) => {
         const option = document.createElement("option");
-        option.value = op.no;
+        option.value = op.numberOption;
         option.innerHTML = op.case;
-        caseSelect.appendChild(option);
+        caseSelected.appendChild(option);
     })
 }
 
@@ -27,47 +27,28 @@ function clearInput(){
     finalResult.value = "";
 }
 
-// Celsius a kelvin
-function celsiusToKelvin(){
-    console.log(13313);
-    return parseFloat(inputData.value) + 273.15;
-}
-// Celsius a Fahrenheit
-function celsiusToFahrenheit() {
-    console.log(2);
-    return ( parseFloat(inputData.value) * 9/5) + 32;
-}
+function celsiusToKelvin(){ return parseFloat(inputData.value) + 273.15; }
 
-  // Fahrenheit a Kelvin
-function kelvinToFahrenheit() {
-    console.log(3);
-    return ((9*(parseFloat(inputData.value) - 273.15) / 5)) + 32; }
+function celsiusToFahrenheit() { return ( parseFloat(inputData.value) * 9/5) + 32; }
 
-function kelvinToCelsius(){
-    console.log(4);
-    return parseFloat(inputData.value) - 273.15; }
-function fahrenheitToCelsius(){
-    console.log(5);
-    return (5*(parseFloat(inputData.value) - 32) / 9); }
-function fahrenheitToKelvin(){
-    console.log(6);
-    return ((5*(parseFloat(inputData.value) - 32) / 9)) + 273.15; }
+function kelvinToFahrenheit() { return ((9*(parseFloat(inputData.value) - 273.15) / 5)) + 32; }
 
+function kelvinToCelsius(){ return parseFloat(inputData.value) - 273.15; }
+
+function fahrenheitToCelsius(){ return (5*(parseFloat(inputData.value) - 32) / 9); }
+
+function fahrenheitToKelvin(){ return ((5*(parseFloat(inputData.value) - 32) / 9)) + 273.15; }
 
 function finalResultImplement(){
-    const selectedFunction = mymap.get(caseSelect.value); // Obtiene la función seleccionada del mapa
-    const inputValue = parseFloat(inputData.value); // Obtiene el valor del input como un número
-    const result = selectedFunction(inputValue); // Llama a la función seleccionada y le pasa el valor del input como argumento
-    console.log(result); // Imprime el resultado en la consola
+    const selectedFunction = mapFunction.get(caseSelected.value);
+    const inputValue = parseFloat(inputData.value);
+    const result = selectedFunction(inputValue);
     finalResult.value = result;
 }
 
 function main(){
-    finalResult.value = 12;
     insertOptions();
-   // celsiusToKelvin();
     btnClear.addEventListener("click" , clearInput);
     inputData.addEventListener("input",finalResultImplemet);
-    console.log("fin");
 }
 main();
