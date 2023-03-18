@@ -1,8 +1,8 @@
 const options = [
 
-  { "no" : "1",
+{ "no" : "1",
     "case":"celsius-kelvin"
-  }
+}
 ,
 {   "no" : "2",
     "case": "celsius-fahrenheit "
