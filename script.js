@@ -5,12 +5,12 @@ const btnClear = document.querySelector('.clear');
 
 const mymap = new Map();
 
-mymap.set("1",celsiusToKelvin());
-mymap.set("2",celsiusToFahrenheit());
-mymap.set("3",kelvinToFahrenheit());
-mymap.set("4",kelvinToCelsius());
-mymap.set("5",fahrenheitToCelsius());
-mymap.set("6",fahrenheitToKelvin());
+mymap.set("1",celsiusToKelvin);
+mymap.set("2",celsiusToFahrenheit);
+mymap.set("3",kelvinToFahrenheit);
+mymap.set("4",kelvinToCelsius);
+mymap.set("5",fahrenheitToCelsius);
+mymap.set("6",fahrenheitToKelvin);
 
 
 function insertOptions(){
@@ -32,7 +32,7 @@ function clearInput(){
 
 // Celsius a kelvin
 function celsiusToKelvin(){
-    console.log(1);
+    console.log(13313);
     return parseFloat(inputData.value) + 273.15;
 }
 // Celsius a Fahrenheit
@@ -58,11 +58,11 @@ function fahrenheitToKelvin(){
 
 
 function finalResultImplemet(){
-   // console.log(caseSelect.value);
-    console.log(mymap.get(caseSelect.value));
-   // console.log(celsiusToKelvin());
-    /*console.log(12);
-    finalResult.value = mymap.get(caseSelect.value);*/
+    const selectedFunction = mymap.get(caseSelect.value); // Obtiene la función seleccionada del mapa
+    const inputValue = parseFloat(inputData.value); // Obtiene el valor del input como un número
+    const result = selectedFunction(inputValue); // Llama a la función seleccionada y le pasa el valor del input como argumento
+    console.log(result); // Imprime el resultado en la consola
+    finalResult.value = result;
 }
 
 function main(){
