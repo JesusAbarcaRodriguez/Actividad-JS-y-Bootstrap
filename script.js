@@ -54,7 +54,7 @@ function fahrenheitToKelvin(){
     return ((5*(parseFloat(inputData.value) - 32) / 9)) + 273.15; }
 
 
-function finalResultImplemet(){
+function finalResultImplement(){
    // console.log(caseSelect.value);
     console.log(mymap.get(caseSelect.value));
    // console.log(celsiusToKelvin());
