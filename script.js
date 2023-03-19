@@ -44,7 +44,7 @@ function finalResultImplement(){
     const inputValue = parseFloat(inputData.value);
     const result = selectedFunction(inputValue);
     if (!isNaN(result)){
-      finalResult.value = result;
+      finalResult.value = result.toFixed(2);
     }else{
         finalResult.value = 0;
     }
